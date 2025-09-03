@@ -1,0 +1,24 @@
+[33mcommit 216402bc9231b98d7d3d2c52123d06d59c1b5bef[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31mpws/master[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: jebs-tech <bungasaragih688@gmail.com>
+Date:   Wed Aug 27 16:25:16 2025 +0700
+
+    Tutorial 0
+
+ football_news/settings.py | 2 [32m+[m[31m-[m
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+[33mcommit 07797925f2c820aeed02e5d1212e7b5ceedc153a[m
+Author: jebs-tech <bungasaragih688@gmail.com>
+Date:   Wed Aug 27 16:19:45 2025 +0700
+
+    Tutorial 0
+
+ .gitignore                | 115 [32m+++++++++++++++++++++++++++++++++++[m
+ football_news/__init__.py |   0
+ football_news/asgi.py     |  16 [32m+++++[m
+ football_news/settings.py | 149 [32m++++++++++++++++++++++++++++++++++++++++++++++[m
+ football_news/urls.py     |  22 [32m+++++++[m
+ football_news/wsgi.py     |  16 [32m+++++[m
+ manage.py                 |  22 [32m+++++++[m
+ requirements.txt          |   7 [32m+++[m
+ 8 files changed, 347 insertions(+)
