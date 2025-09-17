@@ -88,7 +88,7 @@ class FootballNewsFunctionalTest(LiveServerTestCase):
         # Create user for testing
         self.test_user = User.objects.create_user(
             username='testadmin',
-            password='testpassword'
+            password='pacil24'
         )
 
     def tearDown(self):
@@ -105,7 +105,7 @@ class FootballNewsFunctionalTest(LiveServerTestCase):
         username_input = self.browser.find_element(By.NAME, "username")
         password_input = self.browser.find_element(By.NAME, "password")
         username_input.send_keys("testadmin")
-        password_input.send_keys("testpassword")
+        password_input.send_keys("pacil24")
         password_input.submit()
 
     def test_login_page(self):
