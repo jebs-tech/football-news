@@ -15,4 +15,22 @@
 
 <p>{{ news.content }}</p>
 
+{% if news.user %}
+    <p>Author: {{ news.user.username }}</p>
+{% else %}
+    <p>Author: Anonymous</p>
+{% endif %}
+
+{% if request.user.is_authenticated %}
+    {% if not news.user or request.user == news.user %}
+        <form method="post" action="{% url 'main:news_delete' news.pk %}" 
+              onsubmit="return confirm('Yakin mau hapus berita ini?');">
+            {% csrf_token %}
+            <button type="submit" style="color:white; background:red; border:none; padding:6px 12px; border-radius:6px; cursor:pointer;">
+                Delete
+            </button>
+        </form>
+    {% endif %}
+{% endif %}
+
 {% endblock content %}
