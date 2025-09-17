@@ -36,7 +36,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "jenisa-bunga-footballnews.pbp.cs.ui.ac.id"]
 CSRF_TRUSTED_ORIGINS = [
-    "https://pbp.cs.ui.ac.id/jenisa.bunga/footballnews"
+    "https://jenisa-bunga-footballnews.pbp.cs.ui.ac.id"
 ]
 
 
