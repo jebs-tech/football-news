@@ -52,14 +52,10 @@ def create_news(request):
     return render(request, "create_news.html", context)
 
 @login_required
-def news_delete(request, pk):
-    news = get_object_or_404(News, pk=pk)
-    if news.user is not None and request.user != news.user:
-        return HttpResponseForbidden("Kamu tidak boleh hapus berita ini.")
-
-    if request.method == "POST":
-        news.delete()
-        return redirect('main:show_main')
+def delete_news(request, id):
+    news = get_object_or_404(News, pk=id)
+    news.delete()
+    return HttpResponseRedirect(reverse('main:show_main'))
 
 @login_required(login_url='/login')
 def show_news(request, id):
@@ -133,4 +129,15 @@ def show_json_by_id(request, news_id):
    except News.DoesNotExist:
        return HttpResponse(status=404)
 
+def edit_news(request, id):
+    news = get_object_or_404(News, pk=id)
+    form = NewsForm(request.POST or None, instance=news)
+    if form.is_valid() and request.method == 'POST':
+        form.save()
+        return redirect('main:show_main')
 
+    context = {
+        'form': form
+    }
+
+    return render(request, "edit_news.html", context)
