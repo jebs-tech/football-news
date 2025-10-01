@@ -8,6 +8,7 @@ from main.views import login_user
 from main.views import logout_user
 from main.views import delete_news
 from main.views import edit_news
+from main.views import add_news_entry_ajax
 
 app_name = 'main'
 
@@ -24,4 +25,5 @@ urlpatterns = [
     path('xml/<uuid:news_id>/', show_xml_by_id, name='show_xml_by_id'),
     path('json/<uuid:news_id>/', show_json_by_id, name='show_json_by_id'),
     path('news/<uuid:id>/edit', edit_news, name='edit_news'),
+    path('create-news-ajax', add_news_entry_ajax, name='add_news_entry_ajax'),
 ]
